@@ -12,6 +12,7 @@ import java.util.Random;
 /**
  * @author Yolanda Philgreen
  * The initialization of the new class deck.
+ * Cards are chosen within the deck to be shuffled beforhand.
  */
 public class Deck {
 
@@ -48,20 +49,23 @@ public class Deck {
     shuffled = true;
     position = 0;
   }
-  /*
+  /*  Draw and return
    *  will bring the card choice from the array of strings and the number generator.
    */
  public Card[] toArray() {
    return cards.toArray(new Card[] {});
-   
  }
- 
+ /*
+  *  Card is drawn and if not in position will be given a out of bounds exception.
+  *  
+  */
   public Card draw() 
   throws IndexOutOfBoundsException{
-    return cards.get(position++);
-    
+    return cards.get(position++);  
   }
-  
+  /*
+   * Number of cards in deck are drawn.
+   */
   public Card draw(int numCards)
     throws IndexOutOfBoundsException {
    Card[] hand = new Card[numCards];
