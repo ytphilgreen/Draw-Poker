@@ -66,7 +66,7 @@ public class Deck {
   /*
    * Number of cards in deck are drawn.
    */
-  public Card draw(int numCards)
+  public Card [] draw(int numCards)
     throws IndexOutOfBoundsException {
    Card[] hand = new Card[numCards];
   for (int i = 0; i <hand.length; i++) {
@@ -74,5 +74,10 @@ public class Deck {
   }
   return hand;
   
+  }
+  @Override
+  public String toString() {
+    return cards.toString();
+    
   }
 }
